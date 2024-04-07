@@ -1,0 +1,13 @@
+<h1>{{ 'Error pages: ' + type  }}</h1>
+<mat-action-list fxLayout="row"
+                 fxLayoutGap="10px"
+                 [ngSwitch]="type">
+    <button mat-flat-button
+            color="accent"
+            routerLink="/"
+            *ngSwitchCase="'serverDown'">{{ 'refreshPage' | t }}</button>
+    <button mat-flat-button
+            color="accent"
+            routerLink="/"
+            *ngSwitchDefault>{{ 'goToHomepage' | t }}</button>
+</mat-action-list>

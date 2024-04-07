@@ -1,0 +1,14 @@
+@mixin container {
+    display: block;
+    max-width: $container-width;
+}
+
+@mixin container-large {
+    display: block;
+    max-width: $container-width-large;
+}
+
+@mixin container-small {
+    display: block;
+    max-width: $container-width-small;
+}

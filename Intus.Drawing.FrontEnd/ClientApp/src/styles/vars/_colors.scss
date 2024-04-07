@@ -1,0 +1,64 @@
+@import "./theme";
+
+$color-primary: map-get(map-get($theme, primary), default);
+$color-primary-contrast: map-get(map-get($theme, primary), default-contrast);
+$color-primary-lighter: map-get(map-get($theme, primary), lighter);
+$color-primary-lighter-contrast: map-get(map-get($theme, primary), lighter-contrast);
+$color-primary-darker: map-get(map-get($theme, primary), darker);
+$color-primary-darker-contrast: map-get(map-get($theme, primary), darker-contrast);
+
+$color-accent: map-get(map-get($theme, accent), default);
+$color-accent-contrast: map-get(map-get($theme, accent), default-contrast);
+$color-accent-lighter: map-get(map-get($theme, accent), lighter);
+$color-accent-lighter-contrast: map-get(map-get($theme, accent), default-contrast);
+$color-accent-darker: map-get(map-get($theme, accent), darker);
+$color-accent-darker-contrast: map-get(map-get($theme, accent), darker-contrast);
+$color-accent-disabled: map-get($colorset-accent, 100);
+$color-accent-disabled-contrast: $color-accent-contrast;
+
+$color-warn: map-get(map-get($theme, warn), default);
+$color-warn-contrast: map-get(map-get($theme, warn), default-contrast);
+$color-warn-lighter: map-get(map-get($theme, warn), lighter);
+$color-warn-lighter-contrast: map-get(map-get($theme, warn), lighter-contrast);
+$color-warn-darker: map-get(map-get($theme, warn), darker);
+$color-warn-darker-contrast: map-get(map-get($theme, warn), darker-contrast);
+
+$color-base: mat-color($theme-foreground, base);
+$color-text: mat-color($theme-foreground, text);
+$color-disabled: mat-color($theme-foreground, disabled-text);
+$color-hint: mat-color($theme-foreground, hint-text);
+$color-secondary: mat-color($theme-foreground, secondary-text);
+$color-divider: mat-color($theme-foreground, divider);
+$color-divider-lighter: lighten($color-divider, 60%);
+
+$color-grey-50: map_get($mat-grey, 50);
+$color-grey-100: map_get($mat-grey, 100);
+$color-grey-200: map_get($mat-grey, 200);
+$color-grey-300: map_get($mat-grey, 300);
+$color-grey-400: map_get($mat-grey, 400);
+$color-grey-500: map_get($mat-grey, 500);
+$color-grey-600: map_get($mat-grey, 600);
+$color-grey-700: map_get($mat-grey, 700);
+$color-grey-800: map_get($mat-grey, 800);
+$color-grey-900: map_get($mat-grey, 900);
+$color-grey-A100: map_get($mat-grey, A100);
+$color-grey-A200: map_get($mat-grey, A200);
+$color-grey-A400: map_get($mat-grey, A400);
+$color-grey-A700: map_get($mat-grey, A700);
+
+$color-green: map_get($mat-green, 600);
+$color-green-contrast: map-get(map_get($mat-green, contrast), 600);
+
+$color-muted-text: #909090;
+
+$bg: map-get(map-get($theme, background), background);
+$bg-hover: map-get(map-get($theme, background), hover);
+$bg-card: map-get(map-get($theme, background), card);
+$bg-toast: #323232;
+$bg-toolbar: map-get(map-get($theme, background), app-bar);
+$bg-disabled: rgba(0, 0, 0, 0.02);
+$bg-readonly: rgba(0, 0, 0, 0.04);
+
+:root{
+    --mdc-theme-surface: white;
+}

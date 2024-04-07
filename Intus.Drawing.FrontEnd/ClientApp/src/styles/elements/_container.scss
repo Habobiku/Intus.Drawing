@@ -1,0 +1,19 @@
+@import "../imports";
+
+.container {
+    &, &-lg, &-sm {
+        display: block;
+    }
+}
+
+.container {
+    max-width: $container-width;
+
+    &-lg {
+        max-width: $container-width-large;
+    }
+
+    &-sm {
+        max-width: $container-width-small;
+    }
+}

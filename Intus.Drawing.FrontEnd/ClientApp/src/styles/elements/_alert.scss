@@ -1,0 +1,19 @@
+.alert {
+    border: 1px solid $color-divider;
+    border-radius: 5px;
+    padding: $gap $gap $gap ($gap * 2 + $icon-width);
+    position: relative;
+    min-height: $gap * 2 + $line-height;
+
+    .mat-icon {
+        position: absolute;
+        left: $gap;
+        top: $gap + calc(($line-height - $icon-width) / 2);
+    }
+
+    &--warn {
+        border-color: $color-warn;
+        color: $color-warn;
+        background-color: rgba($color-warn, 0.04);
+    }
+}

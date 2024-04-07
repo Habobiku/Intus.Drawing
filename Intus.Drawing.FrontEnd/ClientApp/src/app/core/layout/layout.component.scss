@@ -1,0 +1,103 @@
+@import "imports";
+
+:host {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    height: 100%;
+}
+
+::ng-deep .main-sidenav {
+    width: $sidenav-width;
+    background-color: $color-grey-100 !important;
+
+    @include responsive('gt-sm') {
+        background-color: $color-grey-100;
+    }
+
+}
+
+
+drawing-loading-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 3px;
+    z-index: $zindex-loading-bar;
+
+    @include responsive('gt-sm') {
+        left: $sidenav-width;
+    }
+}
+
+.main-toolbar {
+    position: relative;
+    z-index: $zindex-toolbar;
+    &__logo {
+        cursor: pointer;
+    }
+}
+
+.main-content {
+    padding: $gap;
+}
+
+
+::ng-deep .main-navigation-list {
+    .mat-mdc-list-item {
+        .mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
+            color: $color-secondary;
+            font-family: "Google Sans";
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            top: 1px;
+
+            >* {
+                font-weight: inherit !important;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            .mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
+                color: $color-primary;
+            }
+        }
+
+        &.is-active {
+            background: $color-accent;
+
+            .mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
+                color: $color-accent-contrast;
+            }
+
+            &:hover,
+            &:focus {
+                background: lighten($color-accent, 3%) !important;
+            }
+
+            .mat-ripple-element {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+
+}
+
+.main-logo {
+    margin: $gap*2 auto $gap*1.5;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.mat-drawer {
+    border-right: solid 1px rgba(0, 0, 0, 0.12) !important;
+}

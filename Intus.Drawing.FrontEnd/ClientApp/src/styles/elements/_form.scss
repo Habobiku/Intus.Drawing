@@ -1,0 +1,91 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.form-field-theme($theme);
+@include mat.input-theme($theme);
+@include mat.radio-theme($theme);
+@include mat.checkbox-theme($theme);
+@include mat.select-theme($theme);
+
+/* TODO(mdc-migration)(fixed?): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.mat-form-field-subscript-wrapper,
+.mat-mdc-form-field-infix {
+    margin-top: 3px;
+}
+
+.mat-mdc-form-field {
+    &:not([appearance="outline"]) .mdc-text-field {
+        background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+    &.c-time-input {
+        max-width: fit-content;
+    }
+
+    &[appearance="outline"] {
+
+        &.readonly .mdc-text-field,
+        &.disabled .mdc-text-field {
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        .mdc-text-field {
+            color: $color-muted-text;
+        }
+
+        .mat-mdc-text-field-wrapper {
+            border-color: $color-divider;
+        }
+    }
+}
+
+.mdc-floating-label.mat-mdc-floating-label {
+    color: $color-muted-text !important;
+}
+
+.form-horizontal {
+    display: flex;
+    flex-direction: column;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.mat-form-field-outline {
+    border-radius: 5px;
+}
+
+.mat-form-field-readonly,
+.mat-form-field-disabled {
+
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    .mat-form-field-outline {
+        color: rgba(0, 0, 0, 0.12) !important;
+        background-color: $bg-readonly;
+    }
+
+    .mat-icon {
+        color: rgba(0, 0, 0, 0.26);
+    }
+
+    .mat-mdc-input-element {
+        color: #53565a !important;
+        cursor: text !important;
+    }
+
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    .mat-form-field-flex:hover .mat-form-field-outline {
+        opacity: 1 !important;
+    }
+
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    .mat-form-field-flex:hover .mat-form-field-outline-thick {
+        opacity: 0 !important;
+    }
+}
+
+.mat-form-field-type-time-input {
+
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    .mat-form-field-flex {
+        max-width: 180px;
+    }
+}

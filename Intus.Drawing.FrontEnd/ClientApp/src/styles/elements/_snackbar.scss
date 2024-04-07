@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.snack-bar-theme($theme);
+.mat-snack-bar-container-error {
+    color: $color-warn-lighter;
+    font-weight: $font-weight-bolder;
+}

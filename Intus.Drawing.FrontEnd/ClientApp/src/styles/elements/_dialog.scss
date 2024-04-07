@@ -1,0 +1,32 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.dialog-theme($theme);
+.mat-mdc-dialog-container {
+    .mat-mdc-dialog-title {
+        font: 700 24px/1.05 "Google Sans Semi Condensed" !important;
+        letter-spacing: -1px;
+    }
+
+    .mat-mdc-dialog-content {
+        border-top: 1px solid $color-divider-lighter;
+        border-bottom: 1px solid $color-divider-lighter;
+
+        .form-horizontal {
+            padding-top: 1.34375em;
+            margin-top: .25em;
+        }
+    }
+
+    .mat-mdc-dialog-actions {
+        justify-content: flex-end;
+        min-height: 0;
+        padding: $gap 0;
+        margin-bottom: -24px;
+    }
+    
+    button.c-dialog-no {
+        background-color: #eee !important;
+        color: #53565a !important;
+    }
+}

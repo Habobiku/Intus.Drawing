@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.toolbar-theme($theme);
+.c-toolbar__title {
+    font-size: 20px;
+    letter-spacing: normal;
+}

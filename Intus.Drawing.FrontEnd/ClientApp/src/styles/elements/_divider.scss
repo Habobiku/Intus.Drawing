@@ -1,0 +1,15 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.divider-theme($theme-dark);
+.mat-divider {
+    body & {
+        margin-top: $gap;
+        margin-bottom: $gap;
+        border-top-color: $color-divider;
+    }
+
+    + .mat-mdc-list {
+        padding-top: 0;
+    }
+}

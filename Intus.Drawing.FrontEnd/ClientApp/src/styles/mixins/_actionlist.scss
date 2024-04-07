@@ -1,0 +1,48 @@
+@mixin disabled-button-vars {
+    --mdc-filled-button-disabled-container-color: rgba(0, 0, 0, 0.12) !important;
+    --mdc-filled-button-disabled-label-text-color: rgba(0, 0, 0, 0.26) !important;
+    --mdc-filled-button-container-color: rgba(0, 0, 0, 0.12) !important;
+    --mdc-filled-button-label-text-color: rgba(0, 0, 0, 0.26) !important;
+}
+
+@mixin accent-button {
+    button.mat-accent:not([disabled]) {
+        color: $color-accent-contrast !important;
+        background-color: $color-accent !important;
+
+        .mat-ripple-element {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @content;
+    }
+}
+
+@mixin success-button {
+    button.mat-success:not([disabled]) {
+        color: $color-green-contrast !important;
+        background-color: $color-green !important;
+
+        .mat-ripple-element {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @content;
+    }
+}
+
+@mixin fix-button-color-attr {
+    @include success-button;
+    @include accent-button;
+}
+
+
+@mixin action-list {
+    .mat-mdc-action-list {
+        @include fix-button-color-attr;
+
+        button[disabled] {
+            @include disabled-button-vars
+        }
+    }
+}

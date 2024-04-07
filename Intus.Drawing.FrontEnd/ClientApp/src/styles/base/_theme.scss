@@ -1,0 +1,7 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.core();
+@include mat.core-theme($theme);
+//@include angular-material-theme($theme);
+

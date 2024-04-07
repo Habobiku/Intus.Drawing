@@ -1,0 +1,7 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.paginator-theme($theme);
+.mat-mdc-paginator{
+    color: $color-muted-text !important;
+}

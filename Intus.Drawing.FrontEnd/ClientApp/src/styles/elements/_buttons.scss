@@ -1,0 +1,37 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.button-theme($theme-dark);
+
+button.mat-mdc-unelevated-button {
+    background-color: $color-grey-200;
+
+    body & {
+        min-width: 100px;
+    }
+
+    &.mat-success:not([disabled]) {
+        color: $color-green-contrast !important;
+        background-color: $color-green !important;
+
+        .mat-ripple-element {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    &.mat-accent:not([disabled]) {
+        color: $color-accent-contrast !important;
+        background-color: $color-accent !important;
+
+        .mat-ripple-element {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    ::ng-deep &[disabled] {
+        --mdc-filled-button-disabled-container-color: rgba(0, 0, 0, 0.12);
+        --mdc-filled-button-disabled-label-text-color: rgba(0, 0, 0, 0.26);
+        --mdc-filled-button-container-color: rgba(0, 0, 0, 0.12);
+        --mdc-filled-button-label-text-color: rgba(0, 0, 0, 0.26);
+    }
+}

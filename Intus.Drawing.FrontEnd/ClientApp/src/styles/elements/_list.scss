@@ -1,0 +1,45 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.list-theme($theme);
+.mat-mdc-list {
+
+    &.is-condensed {
+        .mat-mdc-list-item {
+            height: 40px;
+            font-size: 14px;
+        }
+    }
+
+    &.is-clickable {
+        .mat-mdc-list-item {
+            cursor: pointer;
+            &:hover {
+                background-color: $bg-hover;
+            }
+        }
+    }
+
+    &.is-disabled {
+        background-color: $bg-disabled;
+        color: $color-disabled;
+
+        .mat-mdc-list-item {
+            cursor: default;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    & &-item {
+        color: inherit;
+
+        &.is-not-clickable {
+            cursor: default;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}

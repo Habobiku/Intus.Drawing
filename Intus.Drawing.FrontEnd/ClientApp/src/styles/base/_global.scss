@@ -1,0 +1,126 @@
+@import "../imports";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    font: $font;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    color: $color-text;
+    min-width: 360px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+    color: $color-primary;
+    font-family: "Google Sans Semi Condensed";
+    line-height: 1.15;
+    font-weight: bold;
+    letter-spacing: normal;
+    margin: 0 0 $gap;
+
+    small {
+        font-size: 65%;
+        color: $color-secondary;
+    }
+}
+
+.h1,
+h1 {
+    font-family: "Google Sans Headline";
+    letter-spacing: 0.5px;
+    font-size: 26px;
+    line-height: 0.98;
+}
+
+.h2,
+h2 {
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 1.05;
+}
+
+.h3,
+h3 {
+    font-size: 22px;
+}
+
+.h4,
+h4 {
+    font-size: 20px;
+}
+
+.h5,
+h5 {
+    font-size: 18px;
+}
+
+.h6,
+h6 {
+    font-size: 16px;
+}
+
+a {
+    cursor: pointer;
+    font-weight: bold;
+    color: $color-primary;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &.is-disabled {
+        color: $color-disabled;
+        cursor: default;
+        outline: 0;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+dl {
+    margin: 0 0 $gap;
+}
+
+dt {
+    display: inline;
+    color: $color-secondary;
+    &::after {
+        content: ': ';
+    }
+}
+
+dd {
+    display: inline;
+    margin: 0;
+    font-weight: $font-weight-bolder;
+    &::after {
+        content: ' ';
+        display: block;
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0; 
+}

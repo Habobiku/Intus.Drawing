@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.autocomplete-theme($theme-dark);
+.mat-mdc-autocomplete {
+    &--id-value {
+        /* TODO(mdc-migration): The following rule targets internal classes of option that may no longer apply for the MDC version. */
+        .mat-option-text {
+            span, strong {
+                min-width: 24px;
+                display: inline-block;
+                margin-right: 5px;
+                color: $color-secondary;
+            }
+        }
+    }
+
+    &-panel {
+        .mat-mdc-option {
+            padding-left: 16px;
+            padding-right: 16px;
+            font-size: $font-size;
+            $height: 42px;
+            line-height: $height;
+            height: $height;
+        }
+    }
+}

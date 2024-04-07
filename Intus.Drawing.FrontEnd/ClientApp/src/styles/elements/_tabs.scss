@@ -1,0 +1,14 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.tabs-theme($theme);
+.mat-mdc-tab-links{
+    display: inline-flex !important;
+    .mat-mdc-tab-link{
+        min-width: 160px;
+        
+        &:not(:focus) *{
+            color: $color-muted-text !important;
+        }
+    }
+}

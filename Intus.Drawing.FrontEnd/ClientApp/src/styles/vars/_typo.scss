@@ -1,0 +1,10 @@
+$font-family: Roboto, "Helvetica Neue", sans-serif;
+
+$font-size: 14px;
+$line-height: 20px;
+
+$font-weight: normal;
+$font-weight-bolder: bold;
+$font-weight-lighter: normal;
+
+$font: $font-weight #{$font-size}/#{$line-height} $font-family;

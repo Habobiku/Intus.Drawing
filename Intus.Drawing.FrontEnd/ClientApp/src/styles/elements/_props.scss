@@ -1,0 +1,100 @@
+@import "imports";
+
+%prop-input {
+    width: 40px;
+    height: 22px;
+    font: $font;
+    outline: 0;
+    padding: 0 5px;
+    margin-left: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+    text-align: right;
+    order: 3;
+    outline-offset: -2px;
+
+    &:focus {
+        border-color: rgba(0, 0, 0, 0.87);
+        outline: 1px solid rgba(0, 0, 0, 0.87);
+    }
+
+    &[disabled] {
+        background-color: $bg-disabled;
+        border-color: rgba(0, 0, 0, 0.06);
+        color: $color-disabled;
+    }
+
+    &[readonly] {
+        background-color: $bg-readonly;
+    }
+}
+
+%prop-dots {
+    content: ' ';
+    flex: 1 1 0;
+    border-bottom: 1px dotted $color-divider;
+    order: 2;
+}
+
+.props {
+    &__group {
+        margin: 0 0 $gap;
+    }
+
+    &__title {
+        margin: 0 0 5px;
+    }
+
+    &__field {
+        position: relative;
+        margin-bottom: 5px;
+        display: flex;
+
+        label {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 24px;
+            margin-right: 5px;
+            flex: 0 1 auto;
+            height: 22px;
+        }
+        input {
+            @extend %prop-input;
+        }
+        &::after {
+            @extend %prop-dots;
+        }
+
+        &.has-error {
+            color: $color-warn;
+
+            input {
+                border-color: $color-warn;
+                outline: 1px solid $color-warn;
+            }
+
+            &::after {
+                border-bottom-color: $color-warn;
+            }
+        }
+    }
+}
+
+.prop-sum {
+    display: flex;
+
+    label {
+        flex: 0 1 auto;
+    }
+    input {
+        @extend %prop-input;
+        width: 50px;
+        color: $color-primary;
+        background-color: $color-grey-100;
+    }
+    &::after {
+        @extend %prop-dots;
+    }
+}

@@ -1,0 +1,36 @@
+<mat-sidenav-container class="main-container">
+
+    <mat-sidenav #sidenav
+                 class="main-sidenav"
+                 [mode]="isMobileView ? 'over' : 'side'"
+                 [opened]="!isMobileView">
+
+        <div class="main-logo" routerLink="/">
+            <img src="https://asset.brandfetch.io/idqnDa9hIH/idjrFWsn45.png?updated=1707854778054" alt="Logo">
+        </div>
+
+        <ng-content select=".main-navigation-list"></ng-content>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="main-sidenav-content" toastContainer>
+        <mat-toolbar fxHide.gt-sm
+                     color="primary"
+                     class="main-toolbar mat-elevation-z3">
+                <button mat-icon-button
+                        (click)="sidenav.open()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <div class="main-toolbar__logo" routerLink="/">
+                    Intus Windows
+                </div>
+        </mat-toolbar>
+
+        <drawing-loading-bar [color]="isMobileView ? 'accent' : 'primary'"></drawing-loading-bar>
+
+        <div class="main-content mat-body">
+            <ng-content></ng-content>
+        </div>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,69 @@
+$breakpoints: (
+    xs: 0,
+    sm: 600,
+    md: 960,
+    lg: 1280,
+    xl: 1920
+);
+
+@mixin responsive($value) {
+    $keys: map-keys($breakpoints);
+    $values: map-values($breakpoints);
+
+    @if (str-slice($value, 1, 3) == "lt-") {
+        $bp: str-slice($value, 4);
+        @if (map-has-key($breakpoints, $bp)) {
+            @if (map-get($breakpoints, $bp) > 0) {
+                @media (max-width: map-get($breakpoints, $bp) - 1px) {
+                    @content;
+                }
+            } @else {
+                @error "Invalid breakpoint";
+            }
+        }
+        @else {
+          @error "Breakpoint not found";
+        }
+    }
+
+    @else if (str-slice($value, 1, 3) == "gt-") {
+        $bp: str-slice($value, 4);
+        $nextBpIndex: index($keys, $bp) + 1;
+        $nextBpExist: $nextBpIndex - 1 < length($breakpoints);
+        @if ($nextBpExist) {
+            @media (min-width: nth($values, $nextBpIndex) - 0px) {
+                @content;
+            }
+        }
+        @else if (map-has-key($breakpoints, $bp)) {
+                @error "Invalid breakpoint";
+        }
+        @else {
+            @error "Breakpoint not found";
+          }
+    }
+
+    @else if (map-has-key($breakpoints, $value)) {
+        $bpValue: map-get($breakpoints, $value);
+        $nextBpIndex: index($keys, $value) + 1;
+        $nextBpExist: $nextBpIndex - 1 < length($breakpoints);
+        @if ($bpValue > 0 and $nextBpExist) {
+            @media (min-width: $bpValue + 0px) and (max-width: nth($values, $nextBpIndex) - 1px) {
+                @content;
+            }
+        } @else if ($bpValue > 0) {
+            @media (min-width: $bpValue + 0px) {
+                @content;
+            }
+        } @else if ($nextBpExist) {
+            @media (max-width: nth($values, $nextBpIndex) - 1px) {
+                @content;
+            }
+        }
+    }
+
+    @else {
+        @error "Breakpoint not found";
+    }
+
+}

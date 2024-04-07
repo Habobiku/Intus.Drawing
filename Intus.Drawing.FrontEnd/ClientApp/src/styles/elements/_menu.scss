@@ -1,0 +1,22 @@
+@use '@angular/material' as mat;
+@import "../imports";
+
+@include mat.menu-theme($theme-dark);
+.mat-mdc-menu-item {
+    &.is-active {
+        background: $color-accent;
+        color: $color-accent-contrast;
+        &:hover,
+        &:focus {
+            background: lighten($color-accent, 3%) !important;
+        }
+        .mat-ripple-element {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        &[disabled] {
+            background: $color-accent-lighter !important;
+            color: $color-accent-lighter-contrast;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<drawing-layout>
+
+  <mat-nav-list class="main-navigation-list">
+      <a mat-list-item [routerLink]="item.link" routerLinkActive="is-active" *ngFor="let item of menuItems$ | async">
+          <span matLine>{{ item.title }}</span>
+      </a>
+  </mat-nav-list>
+
+  <router-outlet></router-outlet>
+
+</drawing-layout>
