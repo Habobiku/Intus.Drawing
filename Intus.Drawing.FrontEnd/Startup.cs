@@ -1,4 +1,7 @@
 ﻿using System.Text;
+using Intus.Drawing.Persistence.Entities;
+using Intus.Drawing.Persistence.Services;
+using Intus.Drawing.Persistence.Services.Interfaces;
 using Microsoft.AspNetCore.HttpOverrides;
 
 namespace Intus.Drawing.FrontEnd
@@ -27,6 +30,9 @@ namespace Intus.Drawing.FrontEnd
                 configuration.RootPath = "ClientApp/dist";
             });
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
+            services.AddScoped<IShapeService, ShapeService>();
+            services.Configure<ShapeSettings>(Configuration.GetSection("ShapeSettings"));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
