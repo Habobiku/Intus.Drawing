@@ -6,6 +6,7 @@ import { ToastContainerModule } from 'ngx-toastr';
 import { SharedModule } from 'shared/shared.module';
 import { NotificationsModule } from './notification/notification.module';
 import { DialogModule } from './dialog/dialog.module';
+import { interceptors } from './interceptors';
 
 @NgModule({
     imports: [
@@ -20,6 +21,9 @@ import { DialogModule } from './dialog/dialog.module';
     ],
     exports: [
         LayoutComponent,
-    ]
+    ],
+    providers: [
+        ...interceptors,
+    ],
 })
 export class CoreModule { }

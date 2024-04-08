@@ -1,0 +1,35 @@
+<div class="container">
+
+<mat-toolbar class="c-toolbar mat-elevation-z1">
+    <mat-toolbar-row fxLayout="row"
+                     fxLayoutGap="20px">
+        <mat-action-list class="c-toolbar__actions"
+                         fxHide.lt-sm>
+            <a *ngFor="let item of menuItems"
+               mat-button
+               [routerLink]="item.link"
+               routerLinkActive="is-active">
+                {{ item.title }}
+            </a>
+        </mat-action-list>
+
+        <button mat-button
+                [matMenuTriggerFor]="menu"
+                fxHide.gt-xs
+                class="c-toolbar__menu">
+            {{ activeMenuItemTitle }}
+            <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button *ngFor="let item of menuItems"
+                    mat-menu-item
+                    [routerLink]="item.link"
+                    routerLinkActive="is-active">
+                    <span style="color: black">{{ item.title }}</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+</div>

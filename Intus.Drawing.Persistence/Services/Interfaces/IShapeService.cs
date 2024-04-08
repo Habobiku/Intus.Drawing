@@ -4,8 +4,8 @@ namespace Intus.Drawing.Persistence.Services.Interfaces
 {
     public interface IShapeService
     {
-        Task<T?> GetFigureFromJson<T>() where T : Shape;
-        Task SaveFigureToJson(Shape shape);
+        Task<T?> GetShapeFromJson<T>() where T : Shape;
+        Task TrySaveShapeToJson<T>(Shape shape) where T : Shape;
     }
 }
 

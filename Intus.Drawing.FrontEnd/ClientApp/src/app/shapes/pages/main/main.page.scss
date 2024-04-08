@@ -1,0 +1,31 @@
+@import "imports";
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+.c-toolbar {
+    grid-column: 1;
+    width: auto;
+    margin: (-$gap) (-$gap) $gap;
+    background: $bg-toolbar;
+    justify-content: space-around;
+
+    &__actions {
+        
+
+        .mat-mdc-button {
+            padding: 0 $gap;
+            &.is-active {
+                font-weight: $font-weight-bolder;
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__menu {
+        margin-top: 2px;
+    }
+}
+

@@ -57,13 +57,6 @@ export class RouterService {
     }
 
     navigateByHttpError(error?: HttpErrorResponse) {
-        if (error && error.status === HttpStatusCode.Unauthorized) {
-            const location = error.headers.get('location');
-            if (location) {
-                window.location.href = location;
-            }
-        }
-
         const url = this.getErrorUrl(error);
         this.router.navigateByUrl(url);
     }

@@ -16,8 +16,13 @@ export class MenuService {
         });
 
         menuItems.push({
-            title: 'fetch-data',
-            link: ['/fetch-data'],
+            title: 'home',
+            link: ['/home'],
+        });
+
+        menuItems.push({
+            title: 'shapes',
+            link: ['/shapes'],
         });
 
         return menuItems;

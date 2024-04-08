@@ -1,0 +1,15 @@
+<h2>{{ 'Rectangle perimeter: ' + perimeter }}</h2>
+
+  <div
+    class="rectangle-box"
+    [style.width.px]="width"
+    [style.height.px]="height"
+    mwlResizable
+    [validateResize]="validate.bind(this)"
+    [enableGhostResize]="true"
+    [resizeSnapGrid]="{ left: 1, right: 1 }"
+    (resizeEnd)="onResizeEnd($event)">
+    <i class="material-icons resize-handle-bottom-right"
+    mwlResizeHandle
+    [resizeEdges]="{ bottom: true, right: true }">zoom_out_map</i>
+  </div>
