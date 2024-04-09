@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Xunit;
 using Intus.Drawing.Persistence.Entities;
 
 namespace Intus.Drawing.Persistence.Tests
@@ -7,7 +7,6 @@ namespace Intus.Drawing.Persistence.Tests
 	{
         private const double DefaultWidth = 10;
         private const double DefaultHeight = 10;
-
 
         [Fact]
         public async Task GetShapeFromJson_ReturnsDefaultShape_WhenFileDoesNotExist()

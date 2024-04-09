@@ -75,4 +75,3 @@ namespace Intus.Drawing.FrontEnd
         }
     }
 }
-

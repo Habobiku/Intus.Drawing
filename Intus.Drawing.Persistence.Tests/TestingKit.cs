@@ -1,5 +1,4 @@
-﻿using System;
-using Intus.Drawing.Persistence.Entities;
+﻿using Intus.Drawing.Persistence.Entities;
 using Intus.Drawing.Persistence.Services;
 using Intus.Drawing.Persistence.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;

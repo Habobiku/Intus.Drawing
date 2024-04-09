@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using Intus.Drawing.Persistence.Entities;
 using Intus.Drawing.Persistence.Entities.Abstractions;
 using Intus.Drawing.Persistence.Services.Interfaces;
