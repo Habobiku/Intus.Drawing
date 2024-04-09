@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intus.Drawing.FrontEnd", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intus.Drawing.Persistence", "Intus.Drawing.Persistence\Intus.Drawing.Persistence.csproj", "{7FE968AB-E0AA-4A14-851C-C6F823D99C8B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B7C2C0F1-F3D8-4092-B6E7-1F354E781ED3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{09F91973-A79D-4EC0-95F6-74CC342A7DB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intus.Drawing.Persistence.Tests", "Intus.Drawing.Persistence.Tests\Intus.Drawing.Persistence.Tests.csproj", "{FC2EA182-C92F-45A2-8663-FDA83887796E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +27,19 @@ Global
 		{7FE968AB-E0AA-4A14-851C-C6F823D99C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FE968AB-E0AA-4A14-851C-C6F823D99C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FE968AB-E0AA-4A14-851C-C6F823D99C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC2EA182-C92F-45A2-8663-FDA83887796E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2EA182-C92F-45A2-8663-FDA83887796E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2EA182-C92F-45A2-8663-FDA83887796E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2EA182-C92F-45A2-8663-FDA83887796E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7DBA31DD-1102-4DF2-AFAD-8130CD9C3F65}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{09F91973-A79D-4EC0-95F6-74CC342A7DB3} = {B7C2C0F1-F3D8-4092-B6E7-1F354E781ED3}
+		{FC2EA182-C92F-45A2-8663-FDA83887796E} = {09F91973-A79D-4EC0-95F6-74CC342A7DB3}
 	EndGlobalSection
 EndGlobal
