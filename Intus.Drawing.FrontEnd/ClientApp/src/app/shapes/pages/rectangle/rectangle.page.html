@@ -9,7 +9,13 @@
     [enableGhostResize]="true"
     [resizeSnapGrid]="{ left: 1, right: 1 }"
     (resizeEnd)="onResizeEnd($event)">
-    <i class="material-icons resize-handle-bottom-right"
-    mwlResizeHandle
-    [resizeEdges]="{ bottom: true, right: true }">zoom_out_map</i>
+    <svg attr.height="{{height + 10}}px" attr.width="{{width + 10}}px">
+      <g stroke="black" fill="transparent">
+          <rect [attr.width]="width" [attr.height]="height" rx="10" style="stroke-width:10; stroke:black"></rect>
+        </g> 
+      </svg>
+      <i class="material-icons resize-handle-bottom-right"
+      mwlResizeHandle
+      [resizeEdges]="{ bottom: true, right: true }">zoom_out_map</i>
   </div>
+ 
